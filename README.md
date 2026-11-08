@@ -36,3 +36,11 @@ Node.js, Express.js, MySQL, HTML/CSS/JavaScript, Claude API
 5. Tarayıcıda `http://localhost:3000` adresini aç.
 
 > Veritabanı bağlantısı `localhost`, kullanıcı `root`, veritabanı adı `bias` olarak `server.js` içinde tanımlıdır.
+
+## Ekran görüntüleri
+
+![Ana sayfa](screenshots/anasayfa.png)
+
+![Kategoriler](screenshots/katagoriler.png)
+
+![Yönetici paneli](screenshots/adminpaneli.png)
