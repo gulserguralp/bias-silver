@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BIAS – Giriş Yap</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="bias.css" />
+  <link rel="stylesheet" href="giris.css" />
+</head>
+<body>
+
+  <div class="login-page">
+    <div class="login-box">
+
+      <a href="bias_index.html" class="login-logo">BIAS</a>
+      <p class="login-subtitle">925 Sterling Silver Jewellery</p>
+
+      <div class="login-tabs">
+        <button class="login-tab active" data-tab="giris">Giriş Yap</button>
+        <button class="login-tab" data-tab="kayit">Hesap Oluştur</button>
+      </div>
+
+      <form class="login-form" id="form-giris" action="#">
+        <input type="email" class="login-input" placeholder="E-posta adresi" />
+        <input type="password" class="login-input" placeholder="Şifre" />
+        <button type="submit" class="login-btn"><span>Giriş Yap</span></button>
+        <a href="#" class="login-forgot">Şifremi unuttum</a>
+      </form>
+
+      <form class="login-form hidden" id="form-kayit" action="#">
+        <input type="text" class="login-input" placeholder="Ad Soyad" />
+        <input type="email" class="login-input" placeholder="E-posta adresi" />
+        <input type="password" class="login-input" placeholder="Şifre" />
+        <input type="password" class="login-input" placeholder="Şifre tekrar" />
+        <button type="submit" class="login-btn"><span>Hesap Oluştur</span></button>
+      </form>
+
+      <a href="index.html" class="login-back">← Ana sayfaya dön</a>
+
+    </div>
+  </div>
+
+  <script>
+  // Sekme geçişi
+  const tabs = document.querySelectorAll('.login-tab');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const hedef = tab.dataset.tab;
+      document.querySelectorAll('.login-form').forEach(form => {
+        form.classList.add('hidden');
+      });
+      document.getElementById('form-' + hedef).classList.remove('hidden');
+    });
+  });
+
+  // Giriş formu
+  document.getElementById('form-giris').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = e.target.querySelector('input[type="email"]').value;
+    const sifre = e.target.querySelector('input[type="password"]').value;
+
+    try {
+      const res = await fetch('http://localhost:3000/api/giris', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, sifre })
+      });
+      const data = await res.json();
+
+      if (res.ok) {
+        localStorage.setItem('token', data.token);
+        localStorage.setItem('kullanici', JSON.stringify(data.kullanici));
+        alert('Giriş başarılı! Hoş geldiniz ' + data.kullanici.ad);
+        window.location.href = 'bias_index.html';
+      } else {
+        alert(data.hata);
+      }
+    } catch (err) {
+      alert('Bağlantı hatası');
+    }
+  });
+
+  // Kayıt formu
+  document.getElementById('form-kayit').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const inputs = e.target.querySelectorAll('input');
+    const ad = inputs[0].value;
+    const email = inputs[1].value;
+    const sifre = inputs[2].value;
+    const sifreTekrar = inputs[3].value;
+
+    if (sifre !== sifreTekrar) {
+      alert('Şifreler eşleşmiyor');
+      return;
+    }
+
+    try {
+      const res = await fetch('http://localhost:3000/api/kayit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ad, email, sifre })
+      });
+      const data = await res.json();
+
+      if (res.ok) {
+        alert('Kayıt başarılı! Giriş yapabilirsiniz.');
+        tabs[0].click();
+      } else {
+        alert(data.hata);
+      }
+    } catch (err) {
+      alert('Bağlantı hatası');
+    }
+  });
+</script>
+<script src="arama.js"></script>
+ <script src="chatbot.js"></script>
+</body>
+</html>

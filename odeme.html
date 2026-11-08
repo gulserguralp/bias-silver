@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BIAS – Ödeme</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Space+Grotesk:wght@300;400;500&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="bias.css" />
+</head>
+
+<body>
+
+    <div class="announcement-bar">
+        <div class="announcement-track">
+            <span class="announcement-item">Tüm ürünler 925 ayar gümüşten üretilmektedir</span>
+            <span class="announcement-sep">·</span>
+            <span class="announcement-item">5000₺ üzeri ücretsiz kargo</span>
+            <span class="announcement-sep">·</span>
+            <span class="announcement-item">Tüm ürünler 925 ayar gümüşten üretilmektedir</span>
+            <span class="announcement-sep">·</span>
+            <span class="announcement-item">5000₺ üzeri ücretsiz kargo</span>
+            <span class="announcement-sep">·</span>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <a href="bias_index.html" class="navbar-logo">BIAS</a>
+        <ul class="navbar-nav">
+            <li class="nav-dropdown">
+                <a href="#">Kategoriler</a>
+                <div class="dropdown-menu">
+                    <a href="yuzuk.html">Yüzük</a>
+                    <a href="kolye.html">Kolye</a>
+                    <a href="kupe.html">Küpe</a>
+                    <a href="bileklik.html">Bileklik</a>
+                    <a href="charm.html">Charm</a>
+                    <a href="zincir.html">Zincir</a>
+                </div>
+            </li>
+            <li class="nav-dropdown">
+                <a href="#">Koleksiyonlar</a>
+                <div class="dropdown-menu dropdown-menu-collections">
+          <a href="love.html" class="collection-drop-item">
+            <img src="koleksiyon1.jpeg" class="collection-drop-img" alt="Love & Heart" />
+            <span>Love &amp; Heart</span>
+          </a>
+          <a href="savage.html" class="collection-drop-item">
+            <img src="koleksiyon2.jpeg" class="collection-drop-img" alt="Savage Glow" />
+            <span>Savage Glow</span>
+          </a>
+          <a href="mystic.html" class="collection-drop-item">
+            <img src="koleksiyon3.jpeg" class="collection-drop-img" alt="Mystic Root" />
+            <span>Mystic Root</span>
+          </a>
+          <a href="sun.html" class="collection-drop-item">
+            <img src="koleksiyon4.jpeg" class="collection-drop-img" alt="Sun Kissed" />
+            <span>Sun Kissed</span>
+          </a>
+        </div>
+            </li>
+            <li><a href="tumurünler.html">Tüm Ürünler</a></li>
+            <li><a href="bias_index.html#brand">Hakkımızda</a></li>
+        </ul>
+        <div class="navbar-icons">
+            <button aria-label="Ara"
+                onclick="document.getElementById('search-drawer').classList.add('open'); document.getElementById('search-overlay').classList.add('open'); document.getElementById('search-input').focus()">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="11" cy="11" r="8" />
+                    <path d="m21 21-4.35-4.35" />
+                </svg>
+            </button>
+            <div class="nav-dropdown">
+                <a href="profil.html" id="profil-link" aria-label="Hesap">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5">
+                        <circle cx="12" cy="8" r="4" />
+                        <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+                    </svg>
+                </a>
+            </div>
+            <button aria-label="Sepet"
+                onclick="document.getElementById('cart-drawer').classList.add('open'); document.getElementById('cart-overlay').classList.add('open')">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="9" cy="21" r="1" />
+                    <circle cx="20" cy="21" r="1" />
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+   
+    <div class="checkout3-wrap">
+        <div class="checkout3-grid">
+
+            <!-- sol kısım,form-->
+            <div class="checkout3-left">
+
+                <a href="index.html" class="checkout3-back">← Alışverişe Devam Et</a>
+
+                <div class="checkout3-section">
+                    <div class="checkout3-section-title">Teslimat Bilgileri</div>
+                    <div class="checkout3-fields">
+                        <div class="checkout3-row">
+                            <div class="contact-field">
+                                <label class="contact-label">Ad *</label>
+                                <input type="text" class="contact-input" placeholder="Adınız" />
+                            </div>
+                            <div class="contact-field">
+                                <label class="contact-label">Soyad *</label>
+                                <input type="text" class="contact-input" placeholder="Soyadınız" />
+                            </div>
+                        </div>
+                        <div class="contact-field">
+                            <label class="contact-label">E-posta *</label>
+                            <input type="email" class="contact-input" placeholder="ornek@email.com" />
+                        </div>
+                        <div class="contact-field">
+                            <label class="contact-label">Telefon *</label>
+                            <input type="tel" class="contact-input" placeholder="05XX XXX XX XX" />
+                        </div>
+                        <div class="contact-field">
+                            <label class="contact-label">Adres *</label>
+                            <input type="text" class="contact-input" placeholder="Mahalle, Cadde, Sokak, No" />
+                        </div>
+                        <div class="checkout3-row">
+                            <div class="contact-field">
+                                <label class="contact-label">İlçe *</label>
+                                <input type="text" class="contact-input" placeholder="İlçe" />
+                            </div>
+                            <div class="contact-field">
+                                <label class="contact-label">İl *</label>
+                                <input type="text" class="contact-input" placeholder="İl" />
+                            </div>
+                        </div>
+                        <div class="contact-field">
+                            <label class="contact-label">Posta Kodu</label>
+                            <input type="text" class="contact-input" placeholder="34XXX" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="checkout3-section">
+                    <div class="checkout3-section-title">Ödeme Bilgileri</div>
+                    <div class="checkout3-fields">
+                        <div class="contact-field">
+                            <label class="contact-label">Kart Üzerindeki İsim *</label>
+                            <input type="text" class="contact-input" placeholder="Ad Soyad" />
+                        </div>
+                        <div class="contact-field">
+                            <label class="contact-label">Kart Numarası *</label>
+                            <input type="text" class="contact-input" placeholder="XXXX XXXX XXXX XXXX" maxlength="19" />
+                        </div>
+                        <div class="checkout3-row">
+                            <div class="contact-field">
+                                <label class="contact-label">Son Kullanma *</label>
+                                <input type="text" class="contact-input" placeholder="AA / YY" maxlength="7" />
+                            </div>
+                            <div class="contact-field">
+                                <label class="contact-label">CVV *</label>
+                                <input type="text" class="contact-input" placeholder="XXX" maxlength="3" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="checkout3-submit"><span>Siparişi Tamamla</span></button>
+
+            </div>
+
+            <!-- sağ kısım, sipariş özeti-->
+            <div class="checkout3-right">
+
+                <div class="checkout3-summary">
+                    <div class="checkout3-section-title">Sipariş Özeti</div>
+
+                    <!-- Ürün listesi  -->
+                    <div class="checkout3-empty">
+                        <p class="checkout3-empty-text">Sepetinizde ürün bulunmuyor.</p>
+                        <a href="tumurünler.html" class="btn-outline-sm" style="margin-top: 12px;">Alışverişe Başla
+                            →</a>
+                    </div>
+
+                    <!-- Toplamlar -->
+                    <div class="checkout3-totals">
+                        <div class="checkout3-total-row">
+                            <span>Ara Toplam</span>
+                            <span>0₺</span>
+                        </div>
+                        <div class="checkout3-total-row">
+                            <span>Kargo</span>
+                            <span>49₺</span>
+                        </div>
+                        <div class="checkout3-total-divider"></div>
+                        <div class="checkout3-total-row checkout3-total-grand">
+                            <span>Toplam</span>
+                            <span>49₺</span>
+                        </div>
+                    </div>
+
+                    <!-- simgeler -->
+                    <div class="checkout3-trust">
+                        <div class="checkout3-trust-item">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(192,192,192,0.5)"
+                                stroke-width="1.5">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                            </svg>
+                            <span>256-bit SSL Güvenli Ödeme</span>
+                        </div>
+                        <div class="checkout3-trust-item">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(192,192,192,0.5)"
+                                stroke-width="1.5">
+                                <path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z" />
+                                <path d="M16 3H8v4h8V3z" />
+                            </svg>
+                            <span>Ücretsiz İade — 14 Gün</span>
+                        </div>
+                        <div class="checkout3-trust-item">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(192,192,192,0.5)"
+                                stroke-width="1.5">
+                                <circle cx="12" cy="12" r="10" />
+                                <path d="M12 6v6l4 2" />
+                            </svg>
+                            <span>1-7 İş Günü Teslimat</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand">BIAS</div>
+                <p class="footer-tagline">925 ayar gümüşten el yapımı takılar.<br>Form ve kimlik arasında doğan bir
+                    marka.</p>
+            </div>
+            <div>
+                <div class="footer-heading">Kategoriler</div>
+                <ul class="footer-links">
+                    <li><a href="yuzuk.html">Yüzük</a></li>
+                    <li><a href="kolye.html">Kolye</a></li>
+                    <li><a href="kupe.html">Küpe</a></li>
+                    <li><a href="bileklik.html">Bileklik</a></li>
+                    <li><a href="charm.html">Charm</a></li>
+                    <li><a href="zincir.html">Zincir</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="footer-heading">Koleksiyonlar</div>
+        <ul class="footer-links">
+          <li><a href="love.html">Love &amp; Heart</a></li>
+          <li><a href="savage.html">Savage Glow</a></li>
+          <li><a href="mystic.html">Mystic Root</a></li>
+          <li><a href="sun.html">Sun Kissed</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">Bilgi</div>
+        <ul class="footer-links">
+          <li><a href="bias_index.html#brand">Hakkımızda</a></li>
+          <li><a href="kargo.html">Sipariş &amp; Kargo</a></li>
+          <li><a href="iade.html">İade Politikası</a></li>
+          <li><a href="bakim.html">Bakım Rehberi</a></li>
+          <li><a href="iletisim.html">İletişim</a></li>
+        </ul>
+      </div>
+        </div>
+        <div class="footer-bottom">
+            <span class="footer-copy">© 2026 BIAS Silver · Tüm hakları saklıdır</span>
+            <span class="footer-copy">925 Sterling Silver · Handcrafted</span>
+        </div>
+    </footer>
+    <!-- arama -->
+    <div class="cart-overlay" id="search-overlay"
+        onclick="document.getElementById('search-drawer').classList.remove('open'); document.getElementById('search-overlay').classList.remove('open')">
+    </div>
+
+    <div class="cart-drawer" id="search-drawer">
+        <div class="cart-drawer-header">
+            <span class="cart-drawer-title">Ara</span>
+            <button class="cart-drawer-close"
+                onclick="document.getElementById('search-drawer').classList.remove('open'); document.getElementById('search-overlay').classList.remove('open')">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M18 6 6 18M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+        <div class="search-drawer-body">
+            <div class="search-input-wrap">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(192,192,192,0.4)"
+                    stroke-width="1.5">
+                    <circle cx="11" cy="11" r="8" />
+                    <path d="m21 21-4.35-4.35" />
+                </svg>
+                <input type="text" id="search-input" class="search-drawer-input" placeholder="Ürün ara..." />
+            </div>
+            <div class="search-drawer-suggest">
+                <div class="search-drawer-suggest-title">Popüler Aramalar</div>
+                <div class="search-drawer-tags">
+                    <a href="yuzuk.html" class="search-tag">Yüzük</a>
+                    <a href="kolye.html" class="search-tag">Kolye</a>
+                    <a href="kupe.html" class="search-tag">Küpe</a>
+                    <a href="bileklik.html" class="search-tag">Bileklik</a>
+                    <a href="charm.html" class="search-tag">Charm</a>
+                    <a href="zincir.html" class="search-tag">Zincir</a>
+                    <a href="love.html" class="search-tag">Love &amp; Heart</a>
+                    <a href="savage.html" class="search-tag">Savage Glow</a>
+                    <a href="mystic.html" class="search-tag">Mystic Root</a>
+                    <a href="sun.html" class="search-tag">Sun Kissed</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- sepet -->
+    <div class="cart-overlay" id="cart-overlay"
+        onclick="document.getElementById('cart-drawer').classList.remove('open'); document.getElementById('cart-overlay').classList.remove('open')">
+    </div>
+
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="cart-drawer-header">
+            <span class="cart-drawer-title">Sepetim</span>
+            <button class="cart-drawer-close"
+                onclick="document.getElementById('cart-drawer').classList.remove('open'); document.getElementById('cart-overlay').classList.remove('open')">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M18 6 6 18M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+        <div class="cart-drawer-empty">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(192,192,192,0.3)" stroke-width="1">
+                <circle cx="9" cy="21" r="1" />
+                <circle cx="20" cy="21" r="1" />
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+            </svg>
+            <p class="cart-drawer-empty-text">Sepetiniz boş</p>
+            <p class="cart-drawer-empty-sub">Koleksiyonumuzu keşfetmeye başlayın</p>
+            <a href="tumurünler.html" class="btn-outline-sm" style="margin-top: 8px;">Alışverişe Başla →</a>
+        </div>
+        <div class="cart-drawer-footer">
+            <div class="cart-drawer-total">
+                <span class="cart-drawer-total-label">Toplam</span>
+                <span class="cart-drawer-total-price">0₺</span>
+            </div>
+            <a href="odeme.html" class="contact-btn"
+                style="width:100%;text-align:center;justify-content:center;display:flex;text-decoration:none;"><span>Ödemeye
+                    Geç</span></a>
+        </div>
+    </div>
+<script>
+function sepetYukle() {
+  const kullanici = JSON.parse(localStorage.getItem('kullanici'));
+  
+  if (!kullanici) {
+    window.location.href = 'giris_index.html';
+    return;
+  }
+
+  fetch(`http://localhost:3000/api/sepet/${kullanici.id}`)
+    .then(res => res.json())
+    .then(urunler => {
+      const empty = document.querySelector('.checkout3-empty');
+      const totals = document.querySelector('.checkout3-totals');
+      
+      if (urunler.length === 0) {
+        empty.style.display = 'flex';
+        return;
+      }
+
+      empty.style.display = 'none';
+
+      // Ürünleri göster
+      let liste = document.getElementById('odeme-urun-liste');
+      if (!liste) {
+        liste = document.createElement('div');
+        liste.id = 'odeme-urun-liste';
+        totals.parentNode.insertBefore(liste, totals);
+      }
+
+liste.innerHTML = urunler.map(urun => `
+  <div style="display:flex; justify-content:space-between; align-items:center; padding: 14px 0; border-bottom: 1px solid rgba(192,192,192,0.07);">
+    <div>
+      <div style="font-family: var(--font-body); font-size: 15px; color: var(--silver-light);">${urun.ad}</div>
+      <div style="font-family: var(--font-ui); font-size: 9px; color: rgba(192,192,192,0.4); margin-top: 4px; letter-spacing: 0.15em;">${urun.adet} adet</div>
+    </div>
+    <div style="display:flex; align-items:center; gap:12px;">
+      <div style="font-family: var(--font-ui); font-size: 12px; color: var(--silver-dark);">${(urun.fiyat * urun.adet).toFixed(2)}₺</div>
+      <button onclick="urunSil(${urun.id})" style="background:none; border:none; color:rgba(192,192,192,0.4); cursor:pointer; font-size:18px;">×</button>
+    </div>
+  </div>
+`).join('');
+
+      // Toplam hesapla
+      const araToplam = urunler.reduce((t, u) => t + (u.fiyat * u.adet), 0);
+      const kargo = araToplam >= 5000 ? 0 : 49;
+      const toplam = araToplam + kargo;
+
+      totals.innerHTML = `
+        <div class="checkout3-total-row">
+          <span>Ara Toplam</span>
+          <span>${araToplam.toFixed(2)}₺</span>
+        </div>
+        <div class="checkout3-total-row">
+          <span>Kargo</span>
+          <span>${kargo === 0 ? 'Ücretsiz' : kargo + '₺'}</span>
+        </div>
+        <div class="checkout3-total-divider"></div>
+        <div class="checkout3-total-row checkout3-total-grand">
+          <span>Toplam</span>
+          <span>${toplam.toFixed(2)}₺</span>
+        </div>
+      `;
+    });
+}
+
+// Sipariş tamamla butonu
+document.querySelector('.checkout3-submit').addEventListener('click', async () => {
+  const kullanici = JSON.parse(localStorage.getItem('kullanici'));
+  if (!kullanici) {
+    window.location.href = 'giris_index.html';
+    return;
+  }
+
+  const ad = document.querySelector('input[placeholder="Adınız"]').value;
+  const soyad = document.querySelector('input[placeholder="Soyadınız"]').value;
+  const adres = document.querySelector('input[placeholder="Mahalle, Cadde, Sokak, No"]').value;
+  const ilce = document.querySelector('input[placeholder="İlçe"]').value;
+  const il = document.querySelector('input[placeholder="İl"]').value;
+
+  if (!ad || !soyad || !adres || !ilce || !il) {
+    alert('Lütfen tüm zorunlu alanları doldurun');
+    return;
+  }
+
+  const sepetRes = await fetch(`http://localhost:3000/api/sepet/${kullanici.id}`);
+  const urunler = await sepetRes.json();
+
+  if (urunler.length === 0) {
+    alert('Sepetiniz boş');
+    return;
+  }
+
+  const araToplam = urunler.reduce((t, u) => t + (u.fiyat * u.adet), 0);
+  const kargo = araToplam >= 5000 ? 0 : 49;
+  const toplam = araToplam + kargo;
+
+  const siparis = {
+    kullanici_id: kullanici.id,
+    toplam: toplam,
+    teslimat_adresi: `${adres}, ${ilce}, ${il}`,
+    urunler: urunler.map(u => ({
+      urun_id: u.urun_id,
+      adet: u.adet,
+      fiyat: u.fiyat
+    }))
+  };
+
+  const res = await fetch('http://localhost:3000/api/siparis', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(siparis)
+  });
+
+  const data = await res.json();
+
+  if (res.ok) {
+    alert('Siparişiniz alındı! Sipariş numaranız: ' + data.siparis_id);
+    window.location.href = 'bias_index.html';
+  } else {
+    alert('Hata: ' + data.hata);
+  }
+});
+
+sepetYukle();
+
+
+
+  const kullanici = JSON.parse(localStorage.getItem('kullanici'));
+  const profilLink = document.getElementById('profil-link');
+  if (!kullanici && profilLink) {
+    profilLink.href = 'giris_index.html';
+  }
+function urunSil(sepet_id) {
+  fetch(`http://localhost:3000/api/sepet/${sepet_id}`, {
+    method: 'DELETE'
+  })
+  .then(() => sepetYukle());
+}
+
+</script>
+    <script src="arama.js"></script>
+    <script src="chatbot.js"></script>
+</body>
+
+</html>

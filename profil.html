@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BIAS – Profilim</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="bias.css" />
+</head>
+<body>
+
+  <div class="announcement-bar">
+    <div class="announcement-track">
+      <span class="announcement-item">Tüm ürünler 925 ayar gümüşten üretilmektedir</span>
+      <span class="announcement-sep">·</span>
+      <span class="announcement-item">5000₺ üzeri ücretsiz kargo</span>
+      <span class="announcement-sep">·</span>
+      <span class="announcement-item">Tüm ürünler 925 ayar gümüşten üretilmektedir</span>
+      <span class="announcement-sep">·</span>
+      <span class="announcement-item">5000₺ üzeri ücretsiz kargo</span>
+      <span class="announcement-sep">·</span>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <a href="bias_index.html" class="navbar-logo">BIAS</a>
+    <ul class="navbar-nav">
+      <li class="nav-dropdown">
+        <a href="#">Kategoriler</a>
+        <div class="dropdown-menu">
+          <a href="yuzuk.html">Yüzük</a>
+          <a href="kolye.html">Kolye</a>
+          <a href="kupe.html">Küpe</a>
+          <a href="bileklik.html">Bileklik</a>
+          <a href="charm.html">Charm</a>
+        </div>
+      </li>
+      <li class="nav-dropdown">
+        <a href="#">Koleksiyonlar</a>
+        <div class="dropdown-menu dropdown-menu-collections">
+          <a href="love.html" class="collection-drop-item">
+            <img src="koleksiyon1.jpeg" class="collection-drop-img" alt="Love & Heart" />
+            <span>Love &amp; Heart</span>
+          </a>
+          <a href="savage.html" class="collection-drop-item">
+            <img src="koleksiyon2.jpeg" class="collection-drop-img" alt="Savage Glow" />
+            <span>Savage Glow</span>
+          </a>
+          <a href="mystic.html" class="collection-drop-item">
+            <img src="koleksiyon3.jpeg" class="collection-drop-img" alt="Mystic Root" />
+            <span>Mystic Root</span>
+          </a>
+          <a href="sun.html" class="collection-drop-item">
+            <img src="koleksiyon4.jpeg" class="collection-drop-img" alt="Sun Kissed" />
+            <span>Sun Kissed</span>
+          </a>
+        </div>
+      </li>
+      <li><a href="tumurünler.html">Tüm Ürünler</a></li>
+      <li><a href="bias_index.html#brand">Hakkımızda</a></li>
+    </ul>
+    <div class="navbar-icons">
+      <button aria-label="Ara">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="11" cy="11" r="8"/>
+          <path d="m21 21-4.35-4.35"/>
+        </svg>
+      </button>
+      <div class="nav-dropdown">
+        <a href="profil.html" aria-label="Hesap">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+          </svg>
+        </a>
+      </div>
+      <button aria-label="Sepet">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="9" cy="21" r="1"/>
+          <circle cx="20" cy="21" r="1"/>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <section class="cat-page-hero">
+    <div class="cat-page-hero-content">
+      <div class="section-label">Hesabım</div>
+      <h1 class="cat-page-title" id="profil-baslik">Profilim</h1>
+      <p class="cat-page-desc" id="profil-email"></p>
+    </div>
+  </section>
+
+  <div class="profil-section">
+
+    <!-- Sekmeler -->
+    <div class="profil-tabs">
+      <button class="profil-tab active" data-tab="siparisler">Siparişlerim</button>
+      <button class="profil-tab" data-tab="sepet">Sepetim</button>
+      <button class="profil-tab" data-tab="bilgiler">Bilgilerim</button>
+    </div>
+
+    <!-- Siparişler -->
+    <div class="profil-icerik" id="tab-siparisler">
+      <div id="siparis-liste"></div>
+    </div>
+
+    <!-- Sepet -->
+    <div class="profil-icerik hidden" id="tab-sepet">
+      <div id="sepet-liste"></div>
+    </div>
+
+    <!-- Bilgiler -->
+    <div class="profil-icerik hidden" id="tab-bilgiler">
+      <div class="profil-bilgi-grid">
+        <div class="info-block">
+          <div class="info-block-title">Kişisel Bilgiler</div>
+          <div class="profil-bilgi-satir">
+            <span class="profil-bilgi-label">Ad Soyad</span>
+            <span class="profil-bilgi-deger" id="bilgi-ad"></span>
+          </div>
+          <div class="profil-bilgi-satir">
+            <span class="profil-bilgi-label">E-posta</span>
+            <span class="profil-bilgi-deger" id="bilgi-email"></span>
+          </div>
+        </div>
+      </div>
+      <button class="btn-outline-sm" style="margin-top: 24px;" onclick="cikisYap()">Çıkış Yap</button>
+    </div>
+
+  </div>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">BIAS</div>
+        <p class="footer-tagline">925 ayar gümüşten el yapımı takılar.<br>Form ve kimlik arasında doğan bir marka.</p>
+      </div>
+      <div>
+        <div class="footer-heading">Kategoriler</div>
+        <ul class="footer-links">
+          <li><a href="yuzuk.html">Yüzük</a></li>
+          <li><a href="kolye.html">Kolye</a></li>
+          <li><a href="kupe.html">Küpe</a></li>
+          <li><a href="bileklik.html">Bileklik</a></li>
+          <li><a href="charm.html">Charm</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">Koleksiyonlar</div>
+        <ul class="footer-links">
+          <li><a href="love.html">Love &amp; Heart</a></li>
+          <li><a href="savage.html">Savage Glow</a></li>
+          <li><a href="mystic.html">Mystic Root</a></li>
+          <li><a href="sun.html">Sun Kissed</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">Bilgi</div>
+        <ul class="footer-links">
+          <li><a href="bias_index.html#brand">Hakkımızda</a></li>
+          <li><a href="kargo.html">Sipariş &amp; Kargo</a></li>
+          <li><a href="iade.html">İade Politikası</a></li>
+          <li><a href="bakim.html">Bakım Rehberi</a></li>
+          <li><a href="iletisim.html">İletişim</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 BIAS Silver · Tüm hakları saklıdır</span>
+      <span class="footer-copy">925 Sterling Silver · Handcrafted</span>
+    </div>
+  </footer>
+
+  <script>
+    // Kullanıcı kontrolü
+    const kullanici = JSON.parse(localStorage.getItem('kullanici'));
+    if (!kullanici) {
+      window.location.href = 'giris_index.html';
+    } else {
+      document.getElementById('profil-baslik').textContent = kullanici.ad;
+      document.getElementById('profil-email').textContent = kullanici.email;
+      document.getElementById('bilgi-ad').textContent = kullanici.ad;
+      document.getElementById('bilgi-email').textContent = kullanici.email;
+    }
+
+    // Sekme geçişi
+    document.querySelectorAll('.profil-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.profil-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.profil-icerik').forEach(i => i.classList.add('hidden'));
+        tab.classList.add('active');
+        document.getElementById('tab-' + tab.dataset.tab).classList.remove('hidden');
+      });
+    });
+
+    // Siparişleri yükle
+    function siparisleriYukle() {
+      fetch(`http://localhost:3000/api/siparisler/${kullanici.id}`)
+        .then(res => res.json())
+        .then(siparisler => {
+          const liste = document.getElementById('siparis-liste');
+          if (siparisler.length === 0) {
+            liste.innerHTML = '<p class="info-block-text">Henüz siparişiniz bulunmuyor.</p>';
+            return;
+          }
+          liste.innerHTML = siparisler.map(s => `
+            <div class="profil-siparis-kart">
+              <div class="profil-siparis-header">
+                <span class="profil-siparis-no">Sipariş #${s.id}</span>
+                <span class="profil-siparis-durum">${s.durum}</span>
+                <span class="profil-siparis-tarih">${new Date(s.created_at).toLocaleDateString('tr-TR')}</span>
+              </div>
+              <div class="profil-siparis-toplam">${s.toplam}₺</div>
+              <div class="profil-siparis-adres">${s.teslimat_adresi}</div>
+            </div>
+          `).join('');
+        });
+    }
+
+    // Sepeti yükle
+    function sepetYukle() {
+      fetch(`http://localhost:3000/api/sepet/${kullanici.id}`)
+        .then(res => res.json())
+        .then(urunler => {
+          const liste = document.getElementById('sepet-liste');
+          if (urunler.length === 0) {
+            liste.innerHTML = '<p class="info-block-text">Sepetiniz boş.</p>';
+            return;
+          }
+          liste.innerHTML = urunler.map(u => `
+            <div class="profil-sepet-satir">
+              <div>
+                <div class="product-card-name">${u.ad}</div>
+                <div class="product-card-cat">${u.adet} adet</div>
+              </div>
+              <div class="product-card-price">${(u.fiyat * u.adet).toFixed(2)}₺</div>
+            </div>
+          `).join('');
+        });
+    }
+
+    // Çıkış yap
+    function cikisYap() {
+      localStorage.removeItem('kullanici');
+      localStorage.removeItem('token');
+      window.location.href = 'bias_index.html';
+    }
+
+    siparisleriYukle();
+    sepetYukle();
+  </script>
+<script src="arama.js"></script>
+<script src="chatbot.js"></script>
+</body>
+</html>

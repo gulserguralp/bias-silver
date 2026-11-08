@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BIAS – Admin Panel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Space+Grotesk:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="bias.css" />
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <a href="bias_index.html" class="navbar-logo">BIAS</a>
+    <ul class="navbar-nav">
+      <li><a href="#urunler" onclick="sekmeAc('urunler')">Ürünler</a></li>
+      <li><a href="#siparisler" onclick="sekmeAc('siparisler')">Siparişler</a></li>
+      <li><a href="#kullanicilar" onclick="sekmeAc('kullanicilar')">Kullanıcılar</a></li>
+    </ul>
+    <div class="navbar-icons">
+      <a href="bias_index.html"
+        style="color:rgba(192,192,192,0.5); font-family:var(--font-ui); font-size:10px; letter-spacing:0.2em; text-decoration:none;">SITEYE
+        DÖN</a>
+    </div>
+  </nav>
+
+  <div class="admin-wrap">
+
+    <div class="admin-tabs">
+      <button class="admin-tab active" onclick="sekmeAc('urunler')">Ürünler</button>
+      <button class="admin-tab" onclick="sekmeAc('siparisler')">Siparişler</button>
+      <button class="admin-tab" onclick="sekmeAc('kullanicilar')">Kullanıcılar</button>
+    </div>
+
+    <!-- Ürünler-->
+    <div class="admin-content" id="sekme-urunler">
+      <div class="admin-header">
+        <div class="info-block-title">Ürünler</div>
+        <button class="admin-btn" onclick="document.getElementById('urun-form').style.display='block'">+ Yeni Ürün
+          Ekle</button>
+      </div>
+
+      <!-- Yeni ürün ekleme kısmı -->
+      <div id="urun-form" style="display:none;" class="admin-form">
+        <div class="info-block-title">Yeni Ürün</div>
+        <div class="admin-form-grid">
+          <div class="contact-field">
+            <label class="contact-label">Ürün Adı *</label>
+            <input type="text" id="yeni-ad" class="contact-input" placeholder="Ürün adı" />
+          </div>
+          <div class="contact-field">
+            <label class="contact-label">Fiyat *</label>
+            <input type="number" id="yeni-fiyat" class="contact-input" placeholder="890" />
+          </div>
+          <div class="contact-field">
+            <label class="contact-label">Stok *</label>
+            <input type="number" id="yeni-stok" class="contact-input" placeholder="10" />
+          </div>
+          <div class="contact-field">
+            <label class="contact-label">Fotoğraf</label>
+            <input type="text" id="yeni-fotograf" class="contact-input" placeholder="img/urun.jpg" />
+          </div>
+          <div class="contact-field">
+            <label class="contact-label">Kategori *</label>
+            <select id="yeni-kategori" class="contact-input">
+              <option value="1">Yüzük</option>
+              <option value="2">Kolye</option>
+              <option value="3">Küpe</option>
+              <option value="4">Bileklik</option>
+              <option value="5">Charm</option>
+            </select>
+          </div>
+          <div class="contact-field">
+            <label class="contact-label">Koleksiyon *</label>
+            <select id="yeni-koleksiyon" class="contact-input">
+              <option value="1">Love & Heart</option>
+              <option value="2">Savage Glow</option>
+              <option value="3">Mystic Root</option>
+              <option value="4">Sun Kissed</option>
+            </select>
+          </div>
+          <div class="contact-field" style="grid-column: 1/-1;">
+            <label class="contact-label">Açıklama</label>
+            <textarea id="yeni-aciklama" class="contact-input contact-textarea"
+              placeholder="Ürün açıklaması veya aşağıdaki butona tıklayın"></textarea>
+            <button type="button" class="admin-btn-outline" style="margin-top:8px;" onclick="aciklamaOlustur()">
+              Yapay Zeka ile Açıklama Oluştur
+            </button>
+            <div id="aciklama-loading"
+              style="display:none; font-size:12px; color:rgba(192,192,192,0.4); margin-top:4px; font-style:italic;">
+              Yazıyor...</div>
+          </div>
+        </div>
+        <div style="display:flex; gap:12px; margin-top:16px;">
+          <button class="admin-btn" onclick="urunEkle()">Kaydet</button>
+          <button class="admin-btn-outline"
+            onclick="document.getElementById('urun-form').style.display='none'">İptal</button>
+        </div>
+      </div>
+
+      <!-- Ürün listesi -->
+      <div id="urun-listesi" class="admin-table-wrap"></div>
+    </div>
+
+    <!-- Siparişler kısmı -->
+    <div class="admin-content" id="sekme-siparisler" style="display:none;">
+      <div class="admin-header">
+        <div class="info-block-title">Siparişler</div>
+      </div>
+      <div id="siparis-listesi" class="admin-table-wrap"></div>
+    </div>
+
+    <!-- Kullanıcıların gözüktüğü kısım -->
+    <div class="admin-content" id="sekme-kullanicilar" style="display:none;">
+      <div class="admin-header">
+        <div class="info-block-title">Kullanıcılar</div>
+      </div>
+      <div id="kullanici-listesi" class="admin-table-wrap"></div>
+    </div>
+
+  </div>
+
+  <script>
+    function sekmeAc(sekme) {
+      document.querySelectorAll('.admin-content').forEach(s => s.style.display = 'none');
+      document.querySelectorAll('.admin-tab').forEach(t => t.classList.remove('active'));
+      document.getElementById('sekme-' + sekme).style.display = 'block';
+      document.querySelectorAll('.admin-tab').forEach(t => {
+        if (t.textContent.toLowerCase().includes(sekme.substring(0, 4))) t.classList.add('active');
+      });
+
+      if (sekme === 'urunler') urunleriYukle();
+      if (sekme === 'siparisler') siparisleriYukle();
+      if (sekme === 'kullanicilar') kullanicilariYukle();
+    }
+
+
+    function urunleriYukle() {
+      fetch('http://localhost:3000/api/urunler')
+        .then(res => res.json())
+        .then(urunler => {
+          const liste = document.getElementById('urun-listesi');
+          liste.innerHTML = `
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Fotoğraf</th>
+                  <th>Ad</th>
+                  <th>Kategori</th>
+                  <th>Koleksiyon</th>
+                  <th>Fiyat</th>
+                  <th>Stok</th>
+                  <th>İşlem</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${urunler.map(u => `
+                  <tr>
+                    <td>${u.id}</td>
+                    <td><img src="${u.fotograf}" style="width:48px; height:48px; object-fit:cover;" /></td>
+                    <td>${u.ad}</td>
+                    <td>${u.kategori_ad}</td>
+                    <td>${u.koleksiyon_ad}</td>
+                    <td>${u.fiyat}₺</td>
+                    <td>${u.stok}</td>
+                    <td>
+                      <button class="admin-btn-sm" onclick="urunSil(${u.id})">Sil</button>
+                    </td>
+                  </tr>
+                `).join('')}
+              </tbody>
+            </table>
+          `;
+        });
+    }
+
+
+    function urunEkle() {
+      const urun = {
+        ad: document.getElementById('yeni-ad').value,
+        fiyat: document.getElementById('yeni-fiyat').value,
+        stok: document.getElementById('yeni-stok').value,
+        fotograf: document.getElementById('yeni-fotograf').value,
+        kategori_id: document.getElementById('yeni-kategori').value,
+        koleksiyon_id: document.getElementById('yeni-koleksiyon').value,
+        aciklama: document.getElementById('yeni-aciklama').value
+      };
+
+      if (!urun.ad || !urun.fiyat || !urun.stok) {
+        alert('Lütfen zorunlu alanları doldurun');
+        return;
+      }
+
+      fetch('http://localhost:3000/api/urunler', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(urun)
+      })
+        .then(res => res.json())
+        .then(data => {
+          alert('Ürün eklendi!');
+          document.getElementById('urun-form').style.display = 'none';
+          urunleriYukle();
+        });
+    }
+
+
+    function urunSil(id) {
+      if (!confirm('Bu ürünü silmek istediğinize emin misiniz?')) return;
+      fetch(`http://localhost:3000/api/urunler/${id}`, { method: 'DELETE' })
+        .then(() => urunleriYukle());
+    }
+
+
+    function siparisleriYukle() {
+      fetch('http://localhost:3000/api/admin/siparisler')
+        .then(res => res.json())
+        .then(siparisler => {
+          const liste = document.getElementById('siparis-listesi');
+          liste.innerHTML = `
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Kullanıcı</th>
+                  <th>Toplam</th>
+                  <th>Durum</th>
+                  <th>Adres</th>
+                  <th>Tarih</th>
+                  <th>İşlem</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${siparisler.map(s => `
+                  <tr>
+                    <td>${s.id}</td>
+                    <td>${s.kullanici_ad || 'Bilinmiyor'}</td>
+                    <td>${s.toplam}₺</td>
+                    <td>
+                      <select onchange="durumGuncelle(${s.id}, this.value)" class="contact-input" style="padding:4px 8px; font-size:11px;">
+                        <option ${s.durum === 'beklemede' ? 'selected' : ''}>beklemede</option>
+                        <option ${s.durum === 'onaylandi' ? 'selected' : ''}>onaylandi</option>
+                        <option ${s.durum === 'kargoda' ? 'selected' : ''}>kargoda</option>
+                        <option ${s.durum === 'teslim edildi' ? 'selected' : ''}>teslim edildi</option>
+                      </select>
+                    </td>
+                    <td>${s.teslimat_adresi}</td>
+                    <td>${new Date(s.created_at).toLocaleDateString('tr-TR')}</td>
+                    <td><button class="admin-btn-sm" onclick="siparisSil(${s.id})">Sil</button></td>
+                  </tr>
+                `).join('')}
+              </tbody>
+            </table>
+          `;
+        });
+    }
+
+
+    function durumGuncelle(id, durum) {
+      fetch(`http://localhost:3000/api/siparisler/${id}/durum`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ durum })
+      })
+        .then(() => alert('Durum güncellendi!'));
+    }
+
+    function siparisSil(id) {
+      if (!confirm('Bu siparişi silmek istediğinize emin misiniz?')) return;
+      fetch(`http://localhost:3000/api/siparisler/${id}`, { method: 'DELETE' })
+        .then(() => siparisleriYukle());
+    }
+
+
+    function kullanicilariYukle() {
+      fetch('http://localhost:3000/api/kullanicilar')
+        .then(res => res.json())
+        .then(kullanicilar => {
+          const liste = document.getElementById('kullanici-listesi');
+          liste.innerHTML = `
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Ad</th>
+                  <th>Email</th>
+                  <th>Telefon</th>
+                  <th>Kayıt Tarihi</th>
+                </tr>
+              </thead>
+              <tbody>
+                ${kullanicilar.map(k => `
+                  <tr>
+                    <td>${k.id}</td>
+                    <td>${k.ad} ${k.soyad || ''}</td>
+                    <td>${k.email}</td>
+                    <td>${k.telefon || '-'}</td>
+                    <td>${new Date(k.created_at).toLocaleDateString('tr-TR')}</td>
+                  </tr>
+                `).join('')}
+              </tbody>
+            </table>
+          `;
+        });
+    }
+
+
+    urunleriYukle();
+
+
+    async function aciklamaOlustur() {
+      const ad = document.getElementById('yeni-ad').value;
+      const kategoriSelect = document.getElementById('yeni-kategori');
+      const koleksiyonSelect = document.getElementById('yeni-koleksiyon');
+
+      if (!ad) {
+        alert('Lütfen önce ürün adını girin');
+        return;
+      }
+
+      const kategori = kategoriSelect.options[kategoriSelect.selectedIndex].text;
+      const koleksiyon = koleksiyonSelect.options[koleksiyonSelect.selectedIndex].text;
+
+      document.getElementById('aciklama-loading').style.display = 'block';
+
+      try {
+        const res = await fetch('http://localhost:3000/api/aciklama-olustur', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ ad, kategori, koleksiyon })
+        });
+        const data = await res.json();
+        document.getElementById('yeni-aciklama').value = data.aciklama;
+      } catch (err) {
+        alert('Hata: ' + err.message);
+      } finally {
+        document.getElementById('aciklama-loading').style.display = 'none';
+      }
+    }
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,4 @@
+.env
+node_modules/
+bias_yedek.sql
+.DS_Store

@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BIAS – Bakım Rehberi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Space+Grotesk:wght@300;400;500&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="bias.css" />
+</head>
+
+<body>
+
+    <div class="announcement-bar">
+        <div class="announcement-track">
+            <span class="announcement-item">Tüm ürünler 925 ayar gümüşten üretilmektedir</span>
+            <span class="announcement-sep">·</span>
+            <span class="announcement-item">5000₺ üzeri ücretsiz kargo</span>
+            <span class="announcement-sep">·</span>
+            <span class="announcement-item">Tüm ürünler 925 ayar gümüşten üretilmektedir</span>
+            <span class="announcement-sep">·</span>
+            <span class="announcement-item">5000₺ üzeri ücretsiz kargo</span>
+            <span class="announcement-sep">·</span>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <a href="bias_index.html" class="navbar-logo">BIAS</a>
+        <ul class="navbar-nav">
+            <li class="nav-dropdown">
+                <a href="#">Kategoriler</a>
+                <div class="dropdown-menu">
+                    <a href="yuzuk.html">Yüzük</a>
+                    <a href="kolye.html">Kolye</a>
+                    <a href="kupe.html">Küpe</a>
+                    <a href="bileklik.html">Bileklik</a>
+                    <a href="charm.html">Charm</a>
+                    <a href="zincir.html">Zincir</a>
+                </div>
+            </li>
+            <li class="nav-dropdown">
+                <a href="#">Koleksiyonlar</a>
+                <div class="dropdown-menu dropdown-menu-collections">
+          <a href="love.html" class="collection-drop-item">
+            <img src="koleksiyon1.jpeg" class="collection-drop-img" alt="Love & Heart" />
+            <span>Love &amp; Heart</span>
+          </a>
+          <a href="savage.html" class="collection-drop-item">
+            <img src="koleksiyon2.jpeg" class="collection-drop-img" alt="Savage Glow" />
+            <span>Savage Glow</span>
+          </a>
+          <a href="mystic.html" class="collection-drop-item">
+            <img src="koleksiyon3.jpeg" class="collection-drop-img" alt="Mystic Root" />
+            <span>Mystic Root</span>
+          </a>
+          <a href="sun.html" class="collection-drop-item">
+            <img src="koleksiyon4.jpeg" class="collection-drop-img" alt="Sun Kissed" />
+            <span>Sun Kissed</span>
+          </a>
+        </div>
+            </li>
+            <li><a href="tumurünler.html">Tüm Ürünler</a></li>
+            <li><a href="bias_index.html#brand">Hakkımızda</a></li>
+        </ul>
+        <div class="navbar-icons">
+            <button aria-label="Ara"
+                onclick="document.getElementById('search-drawer').classList.add('open'); document.getElementById('search-overlay').classList.add('open'); document.getElementById('search-input').focus()">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="11" cy="11" r="8" />
+                    <path d="m21 21-4.35-4.35" />
+                </svg>
+            </button>
+            <div class="nav-dropdown">
+                <a href="profil.html" id="profil-link" aria-label="Hesap">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5">
+                        <circle cx="12" cy="8" r="4" />
+                        <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+                    </svg>
+                </a>
+            </div>
+            <button aria-label="Sepet"
+                onclick="document.getElementById('cart-drawer').classList.add('open'); document.getElementById('cart-overlay').classList.add('open')">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="9" cy="21" r="1" />
+                    <circle cx="20" cy="21" r="1" />
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <section class="cat-page-hero">
+        <div class="cat-page-hero-content">
+            <div class="section-label">Bilgi</div>
+            <h1 class="cat-page-title">Bakım Rehberi</h1>
+            <p class="cat-page-desc">Gümüş takılarınızın ömrünü uzatmak için öneriler</p>
+        </div>
+    </section>
+
+    <div class="info-section">
+
+        <div class="info-block">
+            <div class="info-block-title">Gümüş Hakkında</div>
+            <p class="info-block-text">925 ayar gümüş, %92.5 saf gümüş ve %7.5 diğer metallerden oluşan bir alaşımdır.
+                Dayanıklılığı ve parlaklığı ile değer kazanan bu metal, doğru bakımla uzun yıllar ilk günkü güzelliğini
+                koruyabilir. Gümüşün zamanla kararması doğal bir süreçtir; bu, metalin sahte olmadığının kanıtıdır.</p>
+        </div>
+
+        <div class="info-block">
+            <div class="info-block-title">Günlük Kullanım</div>
+            <p class="info-block-text">Takılarınızın uzun ömürlü olması için günlük kullanımda şunlara dikkat edin:</p>
+            <ul class="info-block-list">
+                <li>Duş, yüzme ve deniz suyuyla temastan kaçının</li>
+                <li>Parfüm, losyon ve krem uyguladıktan sonra takın</li>
+                <li>Egzersiz ve fiziksel aktiviteler sırasında çıkarın</li>
+                <li>Kimyasal temizlik ürünleriyle temastan koruyun</li>
+                <li>Uyku sırasında çıkarmayı tercih edin</li>
+            </ul>
+        </div>
+
+        <div class="info-block">
+            <div class="info-block-title">Temizlik</div>
+            <p class="info-block-text">Takılarınızı temizlemek için aşağıdaki yöntemi uygulayabilirsiniz:</p>
+            <ul class="info-block-list">
+                <li>Yumuşak bir bez veya gümüş bezi ile nazikçe silin</li>
+                <li>Hafif kararan takılar için ılık su ve hafif sabunla temizleyin</li>
+                <li>Temizledikten sonra tamamen kurulayın, ıslak bırakmayın</li>
+                <li>Ultrasonik temizleyici veya sert kimyasallar kullanmayın</li>
+                <li>Diş macunu ile temizlemekten kaçının, çizik bırakabilir</li>
+            </ul>
+        </div>
+
+        <div class="info-block">
+            <div class="info-block-title">Saklama</div>
+            <p class="info-block-text">Takılarınızı doğru saklamak kararmasını yavaşlatır ve çizilmesini önler:</p>
+            <ul class="info-block-list">
+                <li>Her takıyı ayrı, hava almayan bir kese veya kutu içinde saklayın</li>
+                <li>Nemli ve güneş ışığına maruz kalan yerlerden uzak tutun</li>
+                <li>BIAS kutusunda saklamak ideal koruma sağlar</li>
+                <li>Takıları bir arada yığarak saklamaktan kaçının</li>
+                <li>Silika jel torbacığı ekleyerek nemi azaltabilirsiniz</li>
+            </ul>
+        </div>
+
+        <div class="info-block">
+            <div class="info-block-title">Kararma ve Parlatma</div>
+            <p class="info-block-text">Gümüşün zamanla kararması tamamen doğaldır. Kararmış takılarınızı evde kolayca
+                parlatabilirsiniz. Gümüş parlatma bezi ile hafifçe ovalamak çoğu durumda yeterlidir. Derin kararma için
+                profesyonel bir kuyumcuya başvurmanızı öneririz. Düzenli kullanım ve bakım, kararma sürecini önemli
+                ölçüde yavaşlatır.</p>
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand">BIAS</div>
+                <p class="footer-tagline">925 ayar gümüşten el yapımı takılar.<br>Form ve kimlik arasında doğan bir
+                    marka.</p>
+            </div>
+            <div>
+                <div class="footer-heading">Kategoriler</div>
+                <ul class="footer-links">
+                    <li><a href="yuzuk.html">Yüzük</a></li>
+                    <li><a href="kolye.html">Kolye</a></li>
+                    <li><a href="kupe.html">Küpe</a></li>
+                    <li><a href="bileklik.html">Bileklik</a></li>
+                    <li><a href="charm.html">Charm</a></li>
+                    <li><a href="zincir.html">Zincir</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="footer-heading">Koleksiyonlar</div>
+                <ul class="footer-links">
+                    <li><a href="love.html">Love &amp; Heart</a></li>
+                    <li><a href="savage.html">Savage Glow</a></li>
+                    <li><a href="mystic.html">Mystic Root</a></li>
+                    <li><a href="sun.html">Sun Kissed</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="footer-heading">Bilgi</div>
+                <ul class="footer-links">
+                    <li><a href="index.html#brand">Hakkımızda</a></li>
+                    <li><a href="kargo.html">Sipariş &amp; Kargo</a></li>
+                    <li><a href="iade.html">İade Politikası</a></li>
+                    <li><a href="bakim.html">Bakım Rehberi</a></li>
+                    <li><a href="iletisim.html">İletişim</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span class="footer-copy">© 2026 BIAS Silver · Tüm hakları saklıdır</span>
+            <span class="footer-copy">925 Sterling Silver · Handcrafted</span>
+        </div>
+    </footer>
+  
+
+
+    <div class="cart-overlay" id="search-overlay"
+        onclick="document.getElementById('search-drawer').classList.remove('open'); document.getElementById('search-overlay').classList.remove('open')">
+    </div>
+
+    <div class="cart-drawer" id="search-drawer">
+        <div class="cart-drawer-header">
+            <span class="cart-drawer-title">Ara</span>
+            <button class="cart-drawer-close"
+                onclick="document.getElementById('search-drawer').classList.remove('open'); document.getElementById('search-overlay').classList.remove('open')">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M18 6 6 18M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+        <div class="search-drawer-body">
+            <div class="search-input-wrap">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="rgba(192,192,192,0.4)"
+                    stroke-width="1.5">
+                    <circle cx="11" cy="11" r="8" />
+                    <path d="m21 21-4.35-4.35" />
+                </svg>
+                <input type="text" id="search-input" class="search-drawer-input" placeholder="Ürün ara..." />
+            </div>
+            <div class="search-drawer-suggest">
+                <div class="search-drawer-suggest-title">Popüler Aramalar</div>
+                <div class="search-drawer-tags">
+                    <a href="yuzuk.html" class="search-tag">Yüzük</a>
+                    <a href="kolye.html" class="search-tag">Kolye</a>
+                    <a href="kupe.html" class="search-tag">Küpe</a>
+                    <a href="bileklik.html" class="search-tag">Bileklik</a>
+                    <a href="charm.html" class="search-tag">Charm</a>
+                    <a href="zincir.html" class="search-tag">Zincir</a>
+                    <a href="love.html" class="search-tag">Love &amp; Heart</a>
+                    <a href="savage.html" class="search-tag">Savage Glow</a>
+                    <a href="mystic.html" class="search-tag">Mystic Root</a>
+                    <a href="sun.html" class="search-tag">Sun Kissed</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  
+    <div class="cart-overlay" id="cart-overlay"
+        onclick="document.getElementById('cart-drawer').classList.remove('open'); document.getElementById('cart-overlay').classList.remove('open')">
+    </div>
+
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="cart-drawer-header">
+            <span class="cart-drawer-title">Sepetim</span>
+            <button class="cart-drawer-close"
+                onclick="document.getElementById('cart-drawer').classList.remove('open'); document.getElementById('cart-overlay').classList.remove('open')">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M18 6 6 18M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+        <div class="cart-drawer-empty">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(192,192,192,0.3)" stroke-width="1">
+                <circle cx="9" cy="21" r="1" />
+                <circle cx="20" cy="21" r="1" />
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+            </svg>
+            <p class="cart-drawer-empty-text">Sepetiniz boş</p>
+            <p class="cart-drawer-empty-sub">Koleksiyonumuzu keşfetmeye başlayın</p>
+            <a href="tumurünler.html" class="btn-outline-sm" style="margin-top: 8px;">Alışverişe Başla →</a>
+        </div>
+        <div class="cart-drawer-footer">
+            <div class="cart-drawer-total">
+                <span class="cart-drawer-total-label">Toplam</span>
+                <span class="cart-drawer-total-price">0₺</span>
+            </div>
+            <a href="odeme.html" class="contact-btn"
+                style="width:100%;text-align:center;justify-content:center;display:flex;text-decoration:none;"><span>Ödemeye
+                    Geç</span></a>
+        </div>
+    </div>
+    <script>
+  const kullanici = JSON.parse(localStorage.getItem('kullanici'));
+  const profilLink = document.getElementById('profil-link');
+  if (!kullanici && profilLink) {
+    profilLink.href = 'giris_index.html';
+  }
+</script>
+<script src="arama.js"></script>
+<script src="chatbot.js"></script>
+</body>
+
+</html>
